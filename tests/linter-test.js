@@ -16,6 +16,7 @@ asyncTest("JSHint linting", function() {
     config: "{ \"undef\": true }",
     filename: "filename",
     commit_sha: "commit_sha",
+    linter_name: "hound_assigned_name",
     pull_request_number: "pull_request_number",
     patch: "patch",
   };
@@ -38,6 +39,7 @@ asyncTest("JSHint linting", function() {
           violations: [ { line: 1, message: "'foo' is not defined." } ],
           filename: "filename",
           commit_sha: "commit_sha",
+          linter_name: "hound_assigned_name",
           pull_request_number: "pull_request_number",
           patch: "patch",
         },
@@ -52,6 +54,7 @@ asyncTest("Reporting an invalid configuration file", function() {
     content: "// TODO",
     config: "---\nyaml: is good\ntrue/false/syntax/error",
     filename: "filename",
+    linter_name: "hound_assigned_name",
     commit_sha: "commit_sha",
     pull_request_number: "pull_request_number",
     patch: "patch",
@@ -74,7 +77,7 @@ asyncTest("Reporting an invalid configuration file", function() {
         {
           commit_sha: "commit_sha",
           pull_request_number: "pull_request_number",
-          linter_name: "jshint",
+          linter_name: "hound_assigned_name",
         },
         "pushes a job onto the queue"
       );
